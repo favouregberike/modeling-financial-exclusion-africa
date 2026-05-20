@@ -21,7 +21,7 @@ Financial exclusion limits access to:
 - digital payments,
 - and economic opportunities.
 
-Understanding which populations are most financially excluded — and why — is essential for designing effective financial inclusion strategies.
+Understanding which populations are most financially excluded and why is essential for designing effective financial inclusion strategies.
 
 This project uses machine learning to uncover the strongest predictors of financial exclusion and evaluate how factors such as gender, age, urbanization, and digital finance adoption influence access to financial services across Africa.
 
@@ -43,17 +43,18 @@ The objectives of this project are to:
 
 # Dataset
 
-Source:
-World Bank Global Findex Database
+The dataset used in this project is the World Bank Global Findex Database.
 
-The dataset contains:
-- financial inclusion indicators,
-- mobile money adoption metrics,
-- savings and borrowing behavior,
-- remittance activity,
-- demographic segmentation,
-- and country-level observations across African populations.
+Due to GitHub file size limitations, the raw dataset is not included in this repository.
 
+You can download the dataset from:
+
+https://www.worldbank.org/en/publication/globalfindex
+
+After downloading:
+1. Place the CSV file inside the `data/` folder
+2. Update the file path in the notebook if necessary
+   
 Key dimensions include:
 - Country
 - Gender
