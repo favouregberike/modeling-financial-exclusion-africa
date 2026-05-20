@@ -2,113 +2,152 @@
 
 ## Project Overview
 
-Financial inclusion remains one of the most important drivers of economic participation and social development across Africa. Despite the rapid growth of digital finance and mobile money services, millions of people remain excluded from formal financial systems.
+Financial inclusion is a critical driver of economic participation, poverty reduction, and sustainable development across Africa. Despite the rapid growth of digital finance and mobile money services, millions of people remain excluded from formal financial systems.
 
-This project analyzes financial exclusion patterns across African populations using the World Bank Global Findex dataset. The goal is to identify demographic and structural factors associated with financial exclusion and understand the barriers preventing access to financial services.
+This project applies data science and machine learning techniques to analyze financial exclusion patterns across African populations using the World Bank Global Findex dataset.
 
-Using exploratory data analysis and machine learning techniques, this project models financial exclusion indicators across countries, age groups, gender categories, and urbanization levels to generate actionable insights for policymakers, fintech companies, and development organizations.
+The objective is to identify the demographic and structural factors most associated with financial exclusion and model exclusion intensity across countries and population groups.
+
+Using exploratory data analysis, feature engineering, predictive modeling, and model explainability techniques, this project generates data-driven insights that can support governments, fintech companies, development organizations, and financial institutions in improving access to financial services.
 
 ---
 
-## Objectives
+# Business Problem
+
+Financial exclusion limits access to:
+- savings,
+- credit,
+- insurance,
+- digital payments,
+- and economic opportunities.
+
+Understanding which populations are most financially excluded — and why — is essential for designing effective financial inclusion strategies.
+
+This project uses machine learning to uncover the strongest predictors of financial exclusion and evaluate how factors such as gender, age, urbanization, and digital finance adoption influence access to financial services across Africa.
+
+---
+
+# Objectives
 
 The objectives of this project are to:
 
 - Analyze demographic patterns of financial exclusion
-- Identify the strongest barriers to banking access
-- Examine trends in digital financial adoption
-- Model financial exclusion indicators using machine learning
-- Generate policy and business recommendations
+- Identify key barriers to banking access
+- Examine digital financial adoption trends
+- Engineer features from socioeconomic indicators
+- Build predictive machine learning models
+- Evaluate feature importance and model explainability
+- Generate actionable business and policy insights
 
 ---
 
-## Dataset
+# Dataset
 
 Source:
 World Bank Global Findex Database
 
-Dataset contains:
-- Financial inclusion indicators
-- Banking access statistics
-- Mobile money usage
-- Remittance activity
-- Savings and borrowing behavior
-- Demographic segmentation
-- Country-level observations
+The dataset contains:
+- financial inclusion indicators,
+- mobile money adoption metrics,
+- savings and borrowing behavior,
+- remittance activity,
+- demographic segmentation,
+- and country-level observations across African populations.
 
 Key dimensions include:
 - Country
 - Gender
-- Age group
+- Age Group
 - Urbanization
-- Financial activity indicators
-- Time period
+- Financial Activity Indicators
+- Time Period
 
 ---
 
-## Problem Statement
+# Data Science Workflow
 
-Millions of adults across Africa remain unbanked due to factors such as:
-- insufficient income,
-- lack of trust in financial institutions,
-- distance from banking services,
-- and limited documentation.
+## 1. Data Cleaning & Preparation
 
-Understanding the drivers of financial exclusion is critical for:
-- governments,
-- financial institutions,
-- fintech companies,
-- and development organizations seeking to expand financial access.
-
-This project aims to uncover the structural and demographic factors most associated with financial exclusion across African populations.
+- Filtered relevant financial exclusion indicators
+- Handled missing values
+- Encoded categorical variables
+- Structured data for machine learning workflows
+- Engineered analytical features
 
 ---
 
-## Project Workflow
+## 2. Exploratory Data Analysis (EDA)
 
-### 1. Data Cleaning
-- Handling missing values
-- Filtering relevant indicators
-- Encoding categorical variables
-- Preparing analytical datasets
+Conducted exploratory analysis to identify:
+- country-level exclusion patterns,
+- gender disparities,
+- urban vs rural differences,
+- mobile money adoption trends,
+- and financial behavior segmentation.
 
-### 2. Exploratory Data Analysis (EDA)
-- Country-level financial exclusion analysis
-- Gender-based comparisons
-- Age-group analysis
-- Urban vs rural financial access
-- Mobile money adoption trends
+Visualization techniques included:
+- bar charts,
+- heatmaps,
+- correlation analysis,
+- distribution analysis,
+- and comparative demographic visualizations.
 
-### 3. Feature Engineering
-Features used include:
+---
+
+## 3. Feature Engineering
+
+Features used in modeling include:
+
 - Gender
-- Age category
-- Urbanization level
+- Age Category
+- Urbanization Level
 - Country
-- Indicator category
-- Time period
+- Financial Indicator Type
+- Time Period
 
-### 4. Machine Learning
-Models explored:
+Target Variable:
+- Financial exclusion intensity (`OBS_VALUE`)
+
+---
+
+## 4. Machine Learning Modeling
+
+Implemented and compared multiple machine learning models:
+
+### Models Used
 - Linear Regression
 - Random Forest Regressor
 - XGBoost Regressor
 
-### 5. Model Evaluation
-Evaluation metrics:
+### Evaluation Metrics
 - Mean Absolute Error (MAE)
 - Root Mean Squared Error (RMSE)
 - R² Score
 
-### 6. Insight Generation
-- Identification of major exclusion drivers
-- Digital finance adoption patterns
-- Demographic risk segmentation
-- Policy recommendations
+---
+
+## 5. Model Explainability
+
+Used feature importance analysis and explainability techniques to identify:
+- the strongest drivers of financial exclusion,
+- demographic risk patterns,
+- and the impact of digital financial adoption.
 
 ---
 
-## Tools & Technologies
+# Key Insights
+
+Key findings from the analysis include:
+
+- Income constraints remain one of the strongest barriers to financial inclusion.
+- Rural populations exhibit significantly higher exclusion rates than urban populations.
+- Mobile money adoption is strongly associated with improved financial access.
+- Younger populations demonstrate higher engagement with digital financial services.
+- Gender disparities continue to influence banking access across several regions.
+
+---
+
+# Technologies Used
 
 - Python
 - Pandas
@@ -121,19 +160,7 @@ Evaluation metrics:
 
 ---
 
-## Key Insights
-
-Some of the major insights explored in this project include:
-
-- Income constraints are among the strongest barriers to account ownership
-- Rural populations show higher exclusion rates compared to urban populations
-- Mobile money adoption is strongly associated with improved financial inclusion
-- Younger populations rely more heavily on digital financial channels
-- Gender disparities continue to affect access to financial services in several regions
-
----
-
-## Repository Structure
+# Repository Structure
 
 ```bash
 modeling-financial-exclusion-africa/
@@ -144,7 +171,7 @@ modeling-financial-exclusion-africa/
 │   ├── 02_eda.ipynb
 │   ├── 03_feature_engineering.ipynb
 │   ├── 04_modeling.ipynb
-│   └── 05_storytelling.ipynb
+│   └── 05_model_explainability.ipynb
 │
 ├── visuals/
 ├── README.md
