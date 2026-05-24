@@ -14,7 +14,14 @@ st.set_page_config(
 )
 
 # ── Constants (from Findex 2021 Sub-Saharan Africa distributions) ─────────────
-COUNTRIES = ["Nigeria", "Ghana", "Kenya", "South Africa"]
+COUNTRIES = [
+    "Nigeria", "Ghana", "Kenya", "South Africa", "Ethiopia", "Tanzania",
+    "Uganda", "Rwanda", "Senegal", "Côte d'Ivoire", "Cameroon", "Zimbabwe",
+    "Zambia", "Mozambique", "Mali", "Burkina Faso", "Niger", "Chad",
+    "Madagascar", "Malawi", "Angola", "Togo", "Benin", "Congo, Rep.",
+    "Congo, Dem. Rep.", "Guinea"
+]
+
 
 EDUCATION_LEVELS = [
     "No formal education",
@@ -41,12 +48,14 @@ EMPLOYMENT_STATUS = [
 
 # Inclusion rates by country (Findex 2021 actuals for context labels)
 COUNTRY_INCLUSION_RATE = {
-    "Nigeria": 0.45,
-    "Ghana": 0.57,
-    "Kenya": 0.79,
-    "South Africa": 0.85,
+    "Nigeria": 0.45, "Ghana": 0.57, "Kenya": 0.79, "South Africa": 0.85,
+    "Ethiopia": 0.46, "Tanzania": 0.52, "Uganda": 0.48, "Rwanda": 0.93,
+    "Senegal": 0.56, "Côte d'Ivoire": 0.41, "Cameroon": 0.36,
+    "Zimbabwe": 0.53, "Zambia": 0.45, "Mozambique": 0.34, "Mali": 0.35,
+    "Burkina Faso": 0.43, "Niger": 0.22, "Chad": 0.22, "Madagascar": 0.18,
+    "Malawi": 0.36, "Angola": 0.43, "Togo": 0.42, "Benin": 0.38,
+    "Congo, Rep.": 0.26, "Congo, Dem. Rep.": 0.26, "Guinea": 0.23
 }
-
 # Feature importance weights (derived from Findex research + notebook findings)
 # Used to build a well-calibrated synthetic model
 FEATURE_WEIGHTS = {
