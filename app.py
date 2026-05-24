@@ -158,31 +158,31 @@ def feature_contributions(country, female, age, education, income_quintile,
 
     inc_idx = INCOME_QUINTILES.index(income_quintile)
     if inc_idx >= 3:
-        factors.append(("💰 Income level (top 40%)", "high", "+"))
+        factors.append(("Income level (top 40%)", "high", "+"))
     elif inc_idx <= 1:
-        factors.append(("💰 Income level (bottom 40%)", "high", "−"))
+        factors.append(("Income level (bottom 40%)", "high", "−"))
 
     if internet_use:
-        factors.append(("🌐 Internet access", "medium", "+"))
+        factors.append(("Internet access", "medium", "+"))
     else:
-        factors.append(("🌐 No internet access", "medium", "−"))
+        factors.append(("No internet access", "medium", "−"))
 
     edu_idx = EDUCATION_LEVELS.index(education)
     if edu_idx >= 2:
-        factors.append(("🎓 Secondary+ education", "medium", "+"))
+        factors.append(("Secondary+ education", "medium", "+"))
     else:
-        factors.append(("🎓 Below secondary education", "medium", "−"))
+        factors.append(("Below secondary education", "medium", "−"))
 
     if employed:
-        factors.append(("💼 Employed", "medium", "+"))
+        factors.append(("Employed", "medium", "+"))
 
     if urban:
-        factors.append(("🏙️ Urban residence", "low", "+"))
+        factors.append(("Urban residence", "low", "+"))
     else:
-        factors.append(("🌾 Rural residence", "low", "−"))
+        factors.append(("Rural residence", "low", "−"))
 
     nat_rate = COUNTRY_INCLUSION_RATE[country]
-    factors.append((f"🌍 {country} national rate: {nat_rate:.0%}", "low",
+    factors.append((f"{country} national rate: {nat_rate:.0%}", "low",
                     "+" if nat_rate > 0.6 else "−"))
 
     return factors
@@ -198,7 +198,7 @@ st.markdown(
 )
 
 # Context banner
-with st.expander("📊 Why this matters"):
+with st.expander("AVERAGE INCLUSION"):
     col1, col2, col3 = st.columns(3)
     col1.metric("SSA average inclusion", "55%", help="Findex 2021 weighted average")
     col2.metric("Highest (Rwanda)", "93%", help="Findex 2021")
@@ -238,13 +238,13 @@ if st.button("Predict financial inclusion likelihood", type="primary", use_conta
 
     # Result
     if pred == 1:
-        st.success(f"### ✅ Likely financially included")
+        st.success(f"### Likely financially included")
         st.markdown(
             f"This profile has a **{prob:.0%} probability** of having access to a "
             f"formal financial account."
         )
     else:
-        st.error(f"### ❌ At risk of financial exclusion")
+        st.error(f"### At risk of financial exclusion")
         st.markdown(
             f"This profile has only a **{prob:.0%} probability** of financial inclusion — "
             f"below the threshold for this model."
@@ -274,24 +274,24 @@ if st.button("Predict financial inclusion likelihood", type="primary", use_conta
     st.markdown("**Policy insight**")
     if not has_mobile:
         st.info(
-            "📱 **Mobile ownership is the single strongest predictor** of financial inclusion "
+            " **Mobile ownership is the single strongest predictor** of financial inclusion "
             "in Sub-Saharan Africa. Expanding mobile infrastructure and reducing handset "
             "costs could unlock inclusion for millions of excluded individuals with similar profiles."
         )
     elif INCOME_QUINTILES.index(income_quintile) <= 1:
         st.info(
-            "💰 **Income level is the second strongest barrier** for this profile. "
+            "**Income level is the second strongest barrier** for this profile. "
             "Targeted programmes such as government-to-person transfers, savings groups, "
             "and subsidised account products are most effective for low-income populations."
         )
     elif not uses_internet:
         st.info(
-            "🌐 **Internet access amplifies mobile money adoption.** USSD-based mobile "
+            "**Internet access amplifies mobile money adoption.** USSD-based mobile "
             "money (like M-Pesa) can bridge this gap without requiring internet connectivity."
         )
     else:
         st.info(
-            f"📊 The overall financial inclusion rate in **{country}** is "
+            f"The overall financial inclusion rate in **{country}** is "
             f"{COUNTRY_INCLUSION_RATE[country]:.0%}. This profile sits "
             f"{'above' if prob > COUNTRY_INCLUSION_RATE[country] else 'below'} the national average."
         )
